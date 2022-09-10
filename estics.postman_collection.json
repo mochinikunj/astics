@@ -1,0 +1,220 @@
+{
+	"info": {
+		"_postman_id": "2a6446be-8fca-48c4-91f7-b80ac7062704",
+		"name": "estics",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"Test2\",\r\n    \"lastName\": \"User2\",\r\n    \"mobileNumber\": \"0123456789\",\r\n    \"email\": \"test2@test2.com\",\r\n    \"password\": \"Test2@1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"test2@test2.com\",\r\n    \"password\": \"Test2@1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addMenu",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjI3LCJmaXJzdE5hbWUiOiJUZXN0MiIsImxhc3ROYW1lIjoiVXNlcjIiLCJtb2JpbGVOdW1iZXIiOiIwMTIzNDU2Nzg5IiwiZW1haWwiOiJ0ZXN0MkB0ZXN0Mi5jb20iLCJpYXQiOjE2NjI4MTgwNTYsImV4cCI6MTY2Mjg0ODA1Nn0.POB4KuV5frzAYmwj5KWipDNnnON3poBOHiUqiPzEIno",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"category\": \"pasta\",\r\n    \"item\": \"spicy pasta\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/menu/addmenu",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"menu",
+						"addmenu"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "uploadImage",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjI3LCJmaXJzdE5hbWUiOiJUZXN0MiIsImxhc3ROYW1lIjoiVXNlcjIiLCJtb2JpbGVOdW1iZXIiOiIwMTIzNDU2Nzg5IiwiZW1haWwiOiJ0ZXN0MkB0ZXN0Mi5jb20iLCJpYXQiOjE2NjI4MTgwNTYsImV4cCI6MTY2Mjg0ODA1Nn0.POB4KuV5frzAYmwj5KWipDNnnON3poBOHiUqiPzEIno",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "categoryItem",
+							"type": "file",
+							"src": "/E:/Downloads/jdk.PNG"
+						},
+						{
+							"key": "itemName",
+							"value": "Margherita pizzaa",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/menu/uploadimage",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"menu",
+						"uploadimage"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getcategory",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjI3LCJmaXJzdE5hbWUiOiJUZXN0MiIsImxhc3ROYW1lIjoiVXNlcjIiLCJtb2JpbGVOdW1iZXIiOiIwMTIzNDU2Nzg5IiwiZW1haWwiOiJ0ZXN0MkB0ZXN0Mi5jb20iLCJpYXQiOjE2NjI4MTgwNTYsImV4cCI6MTY2Mjg0ODA1Nn0.POB4KuV5frzAYmwj5KWipDNnnON3poBOHiUqiPzEIno",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/menu/getcategory",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"menu",
+						"getcategory"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getItemsBycategory",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjI3LCJmaXJzdE5hbWUiOiJUZXN0MiIsImxhc3ROYW1lIjoiVXNlcjIiLCJtb2JpbGVOdW1iZXIiOiIwMTIzNDU2Nzg5IiwiZW1haWwiOiJ0ZXN0MkB0ZXN0Mi5jb20iLCJpYXQiOjE2NjI4MTgwNTYsImV4cCI6MTY2Mjg0ODA1Nn0.POB4KuV5frzAYmwj5KWipDNnnON3poBOHiUqiPzEIno",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"category\": \"pasta\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/menu/getitemsbycategory",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"menu",
+						"getitemsbycategory"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
