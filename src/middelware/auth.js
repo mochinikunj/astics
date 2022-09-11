@@ -3,12 +3,15 @@ const connect = require('./../database/connect');
 
 function auth(req, res, next) {
     try {
+        // get and verify token
         const token = req.header('Authorization').replace('Bearer ', '');
         const decoded = jwt.verify(token, process.env.JWT_SECRET);
         if (!decoded.uid) {
             return res.status(401).send({ message: 'Invalid token!' });
         }
 
+        // check if user with uid present in db
+        // if user doen't exist or fails to varify token, then return error
         const sql = `SELECT uid from user WHERE uid="${decoded.uid}"`;
         connect.query(sql, (err, result) => {
             if (err) {
